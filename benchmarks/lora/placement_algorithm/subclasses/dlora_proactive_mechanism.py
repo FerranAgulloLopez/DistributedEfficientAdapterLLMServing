@@ -9,6 +9,10 @@ import numpy as np
 from benchmarks.lora.deployment.slurm.launcher_simulator_from_scratch import get_gpu_memory_availability
 from benchmarks.lora.placement_algorithm.subclasses.proposal_starvation_3 import GPU_MEMORY_AVAILABILITY
 
+"""
+Corresponds to paper dLoRAProactive algorithm
+"""
+
 GPU_MEMORY_AVAILABILITY_EXPS: Dict[str, Dict[int, Dict[int, float]]] = {  # from check_available_gpu_memory exps
     'llama-3.1-8b-instruct': {
         8: {8: 305104, 16: 302000, 32: 296352},

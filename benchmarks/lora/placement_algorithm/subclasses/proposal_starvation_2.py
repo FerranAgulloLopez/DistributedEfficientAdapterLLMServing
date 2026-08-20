@@ -7,6 +7,10 @@ from collections import deque
 import numpy as np
 from benchmarks.lora.predict_digital_twin import predict_digital_twin
 
+"""
+Corresponds to paper Proposed algorithm
+"""
+
 
 ML_MODEL_PATH_THROUGHPUT: Dict[str, str] = {
     'llama-3.1-8b-instruct': '/gpfs/scratch/bsc98/bsc098069/experiment_data/llm_benchmarking/models/trained_ml/llama-3.1-8b-instruct/reg/rf',

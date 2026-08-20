@@ -3,6 +3,10 @@ from typing import List, Tuple, Dict, Optional, Any
 import numpy as np
 from benchmarks.lora.predict_digital_twin import predict_digital_twin
 
+"""
+Corresponds to paper ProposedLat algorithm
+"""
+
 
 ML_MODEL_PATH_STARVATION: Dict[str, str] = {
     'llama-3.1-8b-instruct': '/gpfs/scratch/bsc98/bsc098069/experiment_data/llm_benchmarking/models/trained_ml/llama-3.1-8b-instruct/class/rf',

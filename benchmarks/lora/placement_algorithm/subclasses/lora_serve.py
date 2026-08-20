@@ -15,6 +15,10 @@ from benchmarks.lora.placement_algorithm.interface_dynamic_routing_with_probabil
     PlacementAlgorithmInterfaceDynamicRoutingWithProbabilities
 from benchmarks.lora.placement_algorithm.subclasses.proposal_starvation_3 import GPU_MEMORY_AVAILABILITY
 
+"""
+Corresponds to paper LoRAServe algorithm
+"""
+
 
 OPERATING_POINTS: Dict[str, Dict[int, float]] = {
     "llama-3.1-8b-instruct": {
