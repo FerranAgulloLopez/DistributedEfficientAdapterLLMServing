@@ -1,0 +1,296 @@
+/usr/local/lib/python3.12/dist-packages/vllm/executor/uniproc_executor.py:29: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+  get_ip(), get_open_port())
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:13<00:41, 13.82s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:27<00:27, 13.68s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:30<00:08,  8.95s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:44<00:00, 10.88s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:44<00:00, 11.14s/it]
+
+Process EngineCore_0:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 400, in run_engine_core
+    raise e
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 387, in run_engine_core
+    engine_core = EngineCoreProc(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 329, in __init__
+    super().__init__(vllm_config, executor_class, log_stats,
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 71, in __init__
+    self._initialize_kv_caches(vllm_config)
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 129, in _initialize_kv_caches
+    available_gpu_memory = self.model_executor.determine_available_memory()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py", line 75, in determine_available_memory
+    output = self.collective_rpc("determine_available_memory")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/executor/uniproc_executor.py", line 56, in collective_rpc
+    answer = run_method(self.driver_worker, method, args, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/utils.py", line 2456, in run_method
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py", line 183, in determine_available_memory
+    self.model_runner.profile_run()
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_model_runner.py", line 1651, in profile_run
+    hidden_states = self._dummy_run(self.max_num_tokens)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_model_runner.py", line 1497, in _dummy_run
+    outputs = model(
+              ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/llama.py", line 556, in forward
+    model_output = self.model(input_ids, positions, intermediate_tensors,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/compilation/decorators.py", line 238, in __call__
+    output = self.compiled_callable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 574, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/llama.py", line 343, in forward
+    def forward(
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/fx/graph_module.py", line 822, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/fx/graph_module.py", line 400, in __call__
+    raise e
+  File "/usr/local/lib/python3.12/dist-packages/torch/fx/graph_module.py", line 387, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<eval_with_key>.66", line 659, in forward
+    submod_0 = self.submod_0(l_input_ids_, s0, l_self_modules_embed_tokens_punica_wrapper_embeddings_indices, l_self_modules_embed_tokens_lora_a_stacked_2d, l_self_modules_embed_tokens_modules_base_layer_parameters_weight_, l_self_modules_embed_tokens_punica_wrapper_token_mapping_meta_token_lora_mapping, l_self_modules_embed_tokens_punica_wrapper_token_mapping_meta_token_indices_sorted_by_lora_ids, l_self_modules_embed_tokens_lora_b_stacked, l_self_modules_embed_tokens_punica_wrapper_token_mapping_meta_num_tokens_per_lora, l_self_modules_embed_tokens_punica_wrapper_token_mapping_meta_lora_token_start_loc, l_self_modules_embed_tokens_punica_wrapper_token_mapping_meta_active_lora_ids, l_self_modules_embed_tokens_punica_wrapper_token_mapping_meta_no_lora_flag_cpu, l_self_modules_layers_modules_0_modules_input_layernorm_parameters_weight_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_modules_base_layer_parameters_weight_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_0_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_1_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_2_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_0_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_1_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_2_, l_positions_, l_self_modules_layers_modules_0_modules_self_attn_modules_rotary_emb_buffers_cos_sin_cache_);  l_input_ids_ = l_self_modules_embed_tokens_punica_wrapper_embeddings_indices = l_self_modules_embed_tokens_lora_a_stacked_2d = l_self_modules_embed_tokens_modules_base_layer_parameters_weight_ = l_self_modules_embed_tokens_lora_b_stacked = l_self_modules_layers_modules_0_modules_input_layernorm_parameters_weight_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_modules_base_layer_parameters_weight_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_0_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_1_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_2_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_0_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_1_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_2_ = None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/compilation/backends.py", line 612, in __call__
+    return self.compiled_graph_for_general_shape(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/aot_autograd.py", line 1184, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 323, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/utils.py", line 126, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 672, in inner_fn
+    outs = compiled_fn(args)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 490, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/output_code.py", line 466, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py", line 2128, in run
+    return model(new_inputs)
+           ^^^^^^^^^^^^^^^^^
+  File "/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/or/cort77bs3cud3csglkg7loehaafibbudrpvcrb4nmyqwnax3hf46.py", line 508, in call
+    triton_poi_fused_cat_4.run(buf9, arg20_1, arg21_1, buf12, triton_poi_fused_cat_4_xnumel, grid=grid(triton_poi_fused_cat_4_xnumel), stream=stream0)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 1034, in run
+    self.autotune_to_one_config(*args, grid=grid, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 911, in autotune_to_one_config
+    timings = self.benchmark_all_configs(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 886, in benchmark_all_configs
+    launcher: self.bench(launcher, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 787, in bench
+    return benchmarker.benchmark_gpu(kernel_call, rep=40)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py", line 66, in wrapper
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py", line 202, in benchmark_gpu
+    return self.triton_do_bench(_callable, **kwargs, return_mode="median")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/triton/testing.py", line 153, in do_bench
+    fn()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 771, in kernel_call
+    launcher(
+  File "<string>", line 13, in launcher
+  File "/usr/local/lib/python3.12/dist-packages/triton/backends/nvidia/driver.py", line 444, in __call__
+    self.launch(*args, **kwargs)
+RuntimeError: Triton Error [CUDA]: device-side assert triggered
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [96,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [97,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [98,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [99,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [100,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [101,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [102,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [103,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [112,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [113,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [114,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [115,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [116,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [117,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [118,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [119,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [0,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [1,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [2,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [3,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [4,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [5,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [6,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [7,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [16,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [17,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [18,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [19,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [20,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [21,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [22,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [23,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [32,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [33,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [34,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [35,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [36,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [37,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [38,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [39,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [48,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [49,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [50,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [51,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [52,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [53,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [54,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [55,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [64,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [65,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [66,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [67,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [68,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [69,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [70,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [71,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [80,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [81,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [82,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [83,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [84,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [85,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [86,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+/scratch/tmp/_96_100_32__200_1_1_942452638/torch_compile_cache/842fb7f615/rank_0_0/inductor_cache/gc/cgcekimo4ofyixoknqta6lkxgj4stv52mhaurbkjw4szfodyay4v.py:38: unknown: block: [242,0,0], thread: [87,0,0] Assertion `index out of bounds: 0 <= tl.broadcast_to(tmp10, [XBLOCK]) < 131072` failed.
+terminate called after throwing an instance of 'c10::Error'
+  what():  CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Exception raised from c10_cuda_check_implementation at /pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x7f680b16c1b6 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::string const&) + 0x64 (0x7f680b115a76 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x118 (0x7f680b5a3918 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_cuda.so)
+frame #3: <unknown function> + 0x103ad78 (0x7f67b965ed78 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x10433c5 (0x7f67b96673c5 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cuda.so)
+frame #5: <unknown function> + 0x643a72 (0x7f6802ecba72 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #6: <unknown function> + 0x6f30f (0x7f680b14d30f in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #7: c10::TensorImpl::~TensorImpl() + 0x21b (0x7f680b14633b in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #8: c10::TensorImpl::~TensorImpl() + 0x9 (0x7f680b1464e9 in /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so)
+frame #9: <unknown function> + 0x906d38 (0x7f680318ed38 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #10: THPVariable_subclass_dealloc(_object*) + 0x300 (0x7f680318f090 in /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_python.so)
+frame #11: /usr/bin/python3() [0x59bf95]
+frame #12: /usr/bin/python3() [0x53bea4]
+frame #13: /usr/bin/python3() [0x59bf95]
+frame #14: /usr/bin/python3() [0x53bf55]
+frame #15: /usr/bin/python3() [0x59bdf4]
+frame #16: _PyObject_ClearManagedDict + 0x8f (0x65ea0f in /usr/bin/python3)
+frame #17: /usr/bin/python3() [0x6597f0]
+frame #18: /usr/bin/python3() [0x557e36]
+frame #19: /usr/bin/python3() [0x61da2e]
+frame #20: PyGC_Collect + 0x52 (0x658ae2 in /usr/bin/python3)
+frame #21: Py_FinalizeEx + 0x156 (0x63f586 in /usr/bin/python3)
+frame #22: Py_Exit + 0xc (0x65964c in /usr/bin/python3)
+frame #23: /usr/bin/python3() [0x6570db]
+frame #24: /usr/bin/python3() [0x656f44]
+frame #25: PyRun_SimpleStringFlags + 0x56 (0x6500d6 in /usr/bin/python3)
+frame #26: Py_RunMain + 0x4b2 (0x64d622 in /usr/bin/python3)
+frame #27: Py_BytesMain + 0x2d (0x6064ad in /usr/bin/python3)
+frame #28: <unknown function> + 0x29d90 (0x7f680cb35d90 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #29: __libc_start_main + 0x80 (0x7f680cb35e40 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #30: _start + 0x25 (0x606325 in /usr/bin/python3)
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 1133, in <module>
+    uvloop.run(run_server(args))
+  File "/usr/local/lib/python3.12/dist-packages/uvloop/__init__.py", line 109, in run
+    return __asyncio.run(
+           ^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.12/dist-packages/uvloop/__init__.py", line 61, in wrapper
+    return await main
+           ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 1081, in run_server
+    async with build_async_engine_client(args) as engine_client:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 146, in build_async_engine_client
+    async with build_async_engine_client_from_engine_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 178, in build_async_engine_client_from_engine_args
+    async_llm = AsyncLLM.from_vllm_config(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/async_llm.py", line 150, in from_vllm_config
+    return cls(
+           ^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/async_llm.py", line 118, in __init__
+    self.engine_core = core_client_class(
+                       ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core_client.py", line 642, in __init__
+    super().__init__(
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core_client.py", line 398, in __init__
+    self._wait_for_engine_startup()
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core_client.py", line 430, in _wait_for_engine_startup
+    raise RuntimeError("Engine core initialization failed. "
+RuntimeError: Engine core initialization failed. See root cause above.

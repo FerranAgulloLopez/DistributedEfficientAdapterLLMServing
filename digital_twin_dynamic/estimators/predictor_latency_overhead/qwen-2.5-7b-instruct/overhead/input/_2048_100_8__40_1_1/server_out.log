@@ -1,0 +1,438 @@
+INFO 05-12 22:08:04 [__init__.py:239] Automatically detected platform cuda.
+INFO 05-12 22:08:07 [api_server.py:1046] vLLM API server version 0.1.dev6216+g1125ba0
+INFO 05-12 22:08:07 [api_server.py:1047] args: Namespace(host=None, port=1570, uvicorn_log_level='info', disable_uvicorn_access_log=False, allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=None, dummy_lora_modules='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8', prompt_adapters=None, chat_template=None, chat_template_content_format='auto', response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, enable_ssl_refresh=False, ssl_cert_reqs=0, root_path=None, middleware=[], return_tokens_as_token_ids=False, disable_frontend_multiprocessing=False, enable_request_id_headers=False, enable_auto_tool_choice=False, tool_call_parser=None, tool_parser_plugin='', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', task='auto', tokenizer=None, hf_config_path=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, allowed_local_media_path=None, load_format='auto', download_dir=None, model_loader_extra_config={}, use_tqdm_on_load=True, config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', max_model_len=None, guided_decoding_backend='auto', reasoning_parser=None, logits_processor_pattern=None, model_impl='auto', distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, data_parallel_size=1, enable_expert_parallel=False, max_parallel_loading_workers=None, ray_workers_use_nsight=False, disable_custom_all_reduce=False, block_size=None, gpu_memory_utilization=0.9, swap_space=4, kv_cache_dtype='auto', num_gpu_blocks_override=None, enable_prefix_caching=False, prefix_caching_hash_algo='builtin', cpu_offload_gb=0, calculate_kv_scales=False, disable_sliding_window=False, use_v2_block_manager=True, seed=None, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_token=None, hf_overrides=None, enforce_eager=False, max_seq_len_to_capture=8192, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config={}, limit_mm_per_prompt={}, mm_processor_kwargs=None, disable_mm_preprocessor_cache=False, enable_lora=True, enable_lora_bias=False, max_loras=100, max_lora_rank=8, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=None, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', speculative_config=None, ignore_patterns=[], served_model_name=None, qlora_adapter_name_or_path=None, show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, max_num_batched_tokens=None, max_num_seqs=2048, max_num_partial_prefills=1, max_long_partial_prefills=1, long_prefill_token_threshold=0, num_lookahead_slots=0, scheduler_delay_factor=0.0, preemption_mode=None, num_scheduler_steps=1, multi_step_stream_outputs=True, scheduling_policy='fcfs', enable_chunked_prefill=None, disable_chunked_mm_input=False, scheduler_cls='vllm.v1.core.sched.scheduler.Scheduler', override_neuron_config=None, override_pooler_config=None, compilation_config=None, kv_transfer_config=None, worker_cls='auto', worker_extension_cls='', generation_config='auto', override_generation_config=None, enable_sleep_mode=False, additional_config=None, enable_reasoning=False, disable_cascade_attn=False, disable_log_requests=True, max_log_len=None, disable_fastapi_docs=False, enable_prompt_tokens_details=False, enable_server_load_tracking=False)
+INFO 05-12 22:08:17 [config.py:717] This model supports multiple tasks: {'generate', 'score', 'reward', 'classify', 'embed'}. Defaulting to 'generate'.
+INFO 05-12 22:08:17 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=2048.
+INFO 05-12 22:08:25 [__init__.py:239] Automatically detected platform cuda.
+INFO 05-12 22:08:28 [core.py:58] Initializing a V1 LLM engine (v0.1.dev6216+g1125ba0) with config: model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', speculative_config=None, tokenizer='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 05-12 22:08:29 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7fb3c5c715e0>
+INFO 05-12 22:08:29 [parallel_state.py:1004] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 05-12 22:08:29 [cuda.py:221] Using Flash Attention backend on V1 engine.
+INFO 05-12 22:08:29 [topk_topp_sampler.py:59] Using FlashInfer for top-p & top-k sampling.
+INFO 05-12 22:08:30 [gpu_model_runner.py:1329] Starting to load model /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct...
+INFO 05-12 22:09:06 [loader.py:458] Loading weights took 36.20 seconds
+INFO 05-12 22:09:06 [punica_selector.py:18] Using PunicaWrapperGPU.
+INFO 05-12 22:09:06 [gpu_model_runner.py:1347] Model loading took 18.0087 GiB and 36.584219 seconds
+INFO 05-12 22:09:18 [backends.py:420] Using cache directory: /scratch/tmp/_2048_100_8__40_1_1_65746517/torch_compile_cache/521ba5459b/rank_0_0 for vLLM's torch.compile
+INFO 05-12 22:09:18 [backends.py:430] Dynamo bytecode transform time: 9.09 s
+INFO 05-12 22:09:22 [backends.py:136] Cache the graph of shape None for later use
+INFO 05-12 22:09:43 [backends.py:148] Compiling a graph for general shape takes 24.54 s
+INFO 05-12 22:10:03 [monitor.py:33] torch.compile takes 33.62 s in total
+INFO 05-12 22:10:04 [kv_cache_utils.py:634] GPU KV cache size: 629,312 tokens
+INFO 05-12 22:10:04 [kv_cache_utils.py:637] Maximum concurrency for 32,768 tokens per request: 19.21x
+INFO 05-12 22:16:13 [gpu_model_runner.py:1686] Graph capturing finished in 370 secs, took 2.95 GiB
+INFO 05-12 22:16:16 [core.py:159] init engine (profile, create kv cache, warmup model) took 429.70 seconds
+INFO 05-12 22:16:16 [core_client.py:439] Core engine process 0 ready.
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 1. Total loading time from disk: 0.02533810492604971 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 1. Total loading time from memory: 0.003127465955913067 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-0', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 2. Total loading time from disk: 0.033444367814809084 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 2. Total loading time from memory: 0.006122593069449067 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-1', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 3. Total loading time from disk: 0.040852483827620745 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 3. Total loading time from memory: 0.009110063081607223 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-2', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 4. Total loading time from disk: 0.050521727884188294 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 4. Total loading time from memory: 0.01209077495150268 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-3', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 5. Total loading time from disk: 0.059464754769578576 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 5. Total loading time from memory: 0.015038406010717154 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-4', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 6. Total loading time from disk: 0.06876331381499767 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 6. Total loading time from memory: 0.017995801055803895 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-5', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 7. Total loading time from disk: 0.07806392782367766 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 7. Total loading time from memory: 0.020953743951395154 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-6', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 8. Total loading time from disk: 0.0872591519728303 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 8. Total loading time from memory: 0.023925990099087358 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-7', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 9. Total loading time from disk: 0.09681370086036623 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 9. Total loading time from memory: 0.026894303038716316 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-8', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 10. Total loading time from disk: 0.1064025538507849 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 10. Total loading time from memory: 0.029868164099752903 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-9', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 11. Total loading time from disk: 0.11608627182431519 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 11. Total loading time from memory: 0.03281197207979858 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-10', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 12. Total loading time from disk: 0.1251801266334951 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 12. Total loading time from memory: 0.03577917697839439 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-11', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 13. Total loading time from disk: 0.1342574676964432 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 13. Total loading time from memory: 0.038755368907004595 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-12', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 14. Total loading time from disk: 0.14395454060286283 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 14. Total loading time from memory: 0.041739971842616796 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-13', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 15. Total loading time from disk: 0.15272547164931893 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 15. Total loading time from memory: 0.04469315381720662 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-14', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 16. Total loading time from disk: 0.1614277856424451 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 16. Total loading time from memory: 0.04765522270463407 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-15', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 17. Total loading time from disk: 0.1707762824371457 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 17. Total loading time from memory: 0.05061720684170723 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-16', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 18. Total loading time from disk: 0.18108372949063778 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 18. Total loading time from memory: 0.053580771666020155 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-17', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 19. Total loading time from disk: 0.19019539444707334 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 19. Total loading time from memory: 0.05653300671838224 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-18', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 20. Total loading time from disk: 0.19903466058894992 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 20. Total loading time from memory: 0.05949544464237988 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-19', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 21. Total loading time from disk: 0.20760640245862305 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 21. Total loading time from memory: 0.06245218263939023 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-20', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:16 [worker_manager.py:264] Total loads from disk: 22. Total loading time from disk: 0.21662701945751905 seconds.
+INFO 05-12 22:16:16 [worker_manager.py:278] Total loads from memory: 22. Total loading time from memory: 0.06542815268039703 seconds.
+INFO 05-12 22:16:16 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-21', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 23. Total loading time from disk: 0.22533838963136077 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 23. Total loading time from memory: 0.0683900227304548 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-22', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 24. Total loading time from disk: 0.23505393462255597 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 24. Total loading time from memory: 0.07136878767050803 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-23', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 25. Total loading time from disk: 0.24471566872671247 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 25. Total loading time from memory: 0.07433997467160225 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-24', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 26. Total loading time from disk: 0.25427326071076095 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 26. Total loading time from memory: 0.07729627867229283 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-25', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 27. Total loading time from disk: 0.26270792656578124 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 27. Total loading time from memory: 0.0802697956096381 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-26', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 28. Total loading time from disk: 0.2724006564822048 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 28. Total loading time from memory: 0.08325418271124363 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-27', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 29. Total loading time from disk: 0.2813893062993884 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 29. Total loading time from memory: 0.08621534984558821 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-28', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 30. Total loading time from disk: 0.29088911321014166 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 30. Total loading time from memory: 0.08918956387788057 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-29', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 31. Total loading time from disk: 0.2990654183086008 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 31. Total loading time from memory: 0.09215663699433208 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-30', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 32. Total loading time from disk: 0.30856160423718393 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 32. Total loading time from memory: 0.09512190381065011 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-31', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 33. Total loading time from disk: 0.3175878692418337 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 33. Total loading time from memory: 0.09809403796680272 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-32', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 34. Total loading time from disk: 0.3273642382118851 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 34. Total loading time from memory: 0.10106103587895632 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-33', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 35. Total loading time from disk: 0.33582108933478594 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 35. Total loading time from memory: 0.10403238097205758 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-34', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 36. Total loading time from disk: 0.3454624102450907 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 36. Total loading time from memory: 0.10698894108645618 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-35', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 37. Total loading time from disk: 0.35427933325991035 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 37. Total loading time from memory: 0.10996380914002657 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-36', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 38. Total loading time from disk: 0.3631443192716688 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 38. Total loading time from memory: 0.1129266710486263 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-37', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 39. Total loading time from disk: 0.3721838193014264 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 39. Total loading time from memory: 0.11589059815742075 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-38', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 40. Total loading time from disk: 0.3819912273902446 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 40. Total loading time from memory: 0.11886598798446357 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-39', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 41. Total loading time from disk: 0.3912886471953243 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 41. Total loading time from memory: 0.1218206628691405 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-40', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 42. Total loading time from disk: 0.40053882310166955 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 42. Total loading time from memory: 0.12478825682774186 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-41', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 43. Total loading time from disk: 0.4104401811491698 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 43. Total loading time from memory: 0.12775078369304538 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-42', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 44. Total loading time from disk: 0.4199827981647104 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 44. Total loading time from memory: 0.13071719673462212 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-43', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 45. Total loading time from disk: 0.4288459431845695 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 45. Total loading time from memory: 0.1336839757859707 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-44', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 46. Total loading time from disk: 0.43779211211949587 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 46. Total loading time from memory: 0.13665706873871386 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-45', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 47. Total loading time from disk: 0.44688022416085005 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 47. Total loading time from memory: 0.13961929478682578 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-46', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 48. Total loading time from disk: 0.4563857351895422 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 48. Total loading time from memory: 0.14258924569003284 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-47', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 49. Total loading time from disk: 0.465842962032184 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 49. Total loading time from memory: 0.14554588962346315 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-48', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 50. Total loading time from disk: 0.47473779413849115 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 50. Total loading time from memory: 0.14852219261229038 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-49', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 51. Total loading time from disk: 0.4837904761079699 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 51. Total loading time from memory: 0.15148048941046 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-50', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 52. Total loading time from disk: 0.493541460018605 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 52. Total loading time from memory: 0.15444593131542206 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-51', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 53. Total loading time from disk: 0.5016787971835583 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 53. Total loading time from memory: 0.15741194621659815 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-52', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 54. Total loading time from disk: 0.5114268399775028 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 54. Total loading time from memory: 0.1603848012164235 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-53', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 55. Total loading time from disk: 0.520217593992129 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 55. Total loading time from memory: 0.16336955805309117 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-54', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 56. Total loading time from disk: 0.5299596390686929 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 56. Total loading time from memory: 0.1663335741031915 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-55', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 57. Total loading time from disk: 0.5381045110989362 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 57. Total loading time from memory: 0.16929670609533787 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-56', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 58. Total loading time from disk: 0.547598839038983 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 58. Total loading time from memory: 0.17228199308738112 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-57', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 59. Total loading time from disk: 0.5563702080398798 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 59. Total loading time from memory: 0.17526399390771985 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-58', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 60. Total loading time from disk: 0.566656504990533 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 60. Total loading time from memory: 0.17821910488419235 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-59', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 61. Total loading time from disk: 0.5748074688017368 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 61. Total loading time from memory: 0.18118095095269382 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-60', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 62. Total loading time from disk: 0.5843290088232607 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 62. Total loading time from memory: 0.18415484577417374 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-61', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 63. Total loading time from disk: 0.5933590426575392 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 63. Total loading time from memory: 0.18711227388121188 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-62', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 64. Total loading time from disk: 0.6028076375368983 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 64. Total loading time from memory: 0.1900821807794273 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-63', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 65. Total loading time from disk: 0.6114984233863652 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 65. Total loading time from memory: 0.19304658472537994 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-64', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 66. Total loading time from disk: 0.6211883153300732 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 66. Total loading time from memory: 0.1960161596070975 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-65', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 67. Total loading time from disk: 0.6306862575002015 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 67. Total loading time from memory: 0.1989870616234839 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-66', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 68. Total loading time from disk: 0.6397466433700174 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 68. Total loading time from memory: 0.20194838265888393 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-67', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 69. Total loading time from disk: 0.6493745644111186 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 69. Total loading time from memory: 0.20490181958302855 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-68', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 70. Total loading time from disk: 0.6588463464286178 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 70. Total loading time from memory: 0.20785694476217031 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-69', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 71. Total loading time from disk: 0.6676474625710398 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 71. Total loading time from memory: 0.21083300188183784 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-70', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 72. Total loading time from disk: 0.6764799396041781 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 72. Total loading time from memory: 0.21379522187635303 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-71', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 73. Total loading time from disk: 0.6865302186924964 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 73. Total loading time from memory: 0.2167539857327938 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-72', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 74. Total loading time from disk: 0.6951982306782156 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 74. Total loading time from memory: 0.21972498763352633 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-73', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 75. Total loading time from disk: 0.7035398536827415 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 75. Total loading time from memory: 0.22267740685492754 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-74', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 76. Total loading time from disk: 0.7126037948764861 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 76. Total loading time from memory: 0.22562498087063432 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-75', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 77. Total loading time from disk: 0.7219074086751789 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 77. Total loading time from memory: 0.22858078381977975 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-76', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 78. Total loading time from disk: 0.730887942481786 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 78. Total loading time from memory: 0.23154640779830515 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-77', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 79. Total loading time from disk: 0.7408961663022637 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 79. Total loading time from memory: 0.23452157573774457 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-78', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 80. Total loading time from disk: 0.7489454792812467 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 80. Total loading time from memory: 0.23746228776872158 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-79', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 81. Total loading time from disk: 0.7585747803095728 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 81. Total loading time from memory: 0.2404434778727591 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-80', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 82. Total loading time from disk: 0.7678033662959933 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 82. Total loading time from memory: 0.2434233408421278 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-81', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 83. Total loading time from disk: 0.7773221421521157 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 83. Total loading time from memory: 0.24637902970425785 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-82', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 84. Total loading time from disk: 0.784889254020527 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 84. Total loading time from memory: 0.24930315068922937 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-83', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 85. Total loading time from disk: 0.7931685750372708 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 85. Total loading time from memory: 0.25225432752631605 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-84', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 86. Total loading time from disk: 0.8014626221265644 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 86. Total loading time from memory: 0.25520918844267726 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-85', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 87. Total loading time from disk: 0.8090931940823793 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 87. Total loading time from memory: 0.25815003039315343 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-86', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 88. Total loading time from disk: 0.817299438174814 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 88. Total loading time from memory: 0.26110883243381977 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-87', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 89. Total loading time from disk: 0.8255703302565962 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 89. Total loading time from memory: 0.26406156038865447 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-88', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 90. Total loading time from disk: 0.8337867374066263 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 90. Total loading time from memory: 0.2670506255235523 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-89', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 91. Total loading time from disk: 0.841420776443556 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 91. Total loading time from memory: 0.2700061604846269 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-90', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 92. Total loading time from disk: 0.850069229491055 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 92. Total loading time from memory: 0.27295735850930214 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-91', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 93. Total loading time from disk: 0.8583500764798373 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 93. Total loading time from memory: 0.2759124794974923 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-92', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 94. Total loading time from disk: 0.866564343450591 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 94. Total loading time from memory: 0.27903992659412324 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-93', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 95. Total loading time from disk: 0.8742506036069244 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 95. Total loading time from memory: 0.28201361163519323 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-94', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 96. Total loading time from disk: 0.882495065452531 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 96. Total loading time from memory: 0.28498844150453806 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-95', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 97. Total loading time from disk: 0.8913937904872 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 97. Total loading time from memory: 0.28794416249729693 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-96', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 98. Total loading time from disk: 0.9006681283935905 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 98. Total loading time from memory: 0.2914043355267495 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-97', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 99. Total loading time from disk: 0.9083439235109836 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 99. Total loading time from memory: 0.2943551945500076 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-98', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+INFO 05-12 22:16:17 [worker_manager.py:264] Total loads from disk: 100. Total loading time from disk: 0.9165215454995632 seconds.
+INFO 05-12 22:16:17 [worker_manager.py:278] Total loads from memory: 100. Total loading time from memory: 0.29731336468830705 seconds.
+INFO 05-12 22:16:17 [serving_models.py:220] Loaded new LoRA adapter: name 'dummy-99', path '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8'
+WARNING 05-12 22:16:17 [config.py:1239] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+INFO 05-12 22:16:17 [serving_chat.py:118] Using default chat sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+INFO 05-12 22:16:17 [serving_completion.py:61] Using default completion sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+INFO 05-12 22:16:17 [api_server.py:1093] Starting vLLM API server on http://0.0.0.0:1570
+INFO 05-12 22:16:17 [launcher.py:28] Available routes are:
+INFO 05-12 22:16:17 [launcher.py:36] Route: /openapi.json, Methods: HEAD, GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /docs, Methods: HEAD, GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /redoc, Methods: HEAD, GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /health, Methods: GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /load, Methods: GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /ping, Methods: GET, POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /tokenize, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /detokenize, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v1/models, Methods: GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /version, Methods: GET
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v1/chat/completions, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v1/completions, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v1/embeddings, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /pooling, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /score, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v1/score, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v1/audio/transcriptions, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /rerank, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v1/rerank, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /v2/rerank, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /invocations, Methods: POST
+INFO 05-12 22:16:17 [launcher.py:36] Route: /metrics, Methods: GET
+INFO:     127.0.0.1:54254 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54260 - "GET /v1/models/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54260 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54274 - "GET /metrics/ HTTP/1.1" 200 OK
+WARNING 05-12 22:16:19 [tokenizer.py:284] No tokenizer found in /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8, using base model tokenizer instead. (Exception: Unrecognized model in /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8. Should have a `model_type` key in its config.json, or contain one of the following strings in its name: albert, align, altclip, aria, aria_text, audio-spectrogram-transformer, autoformer, aya_vision, bamba, bark, bart, beit, bert, bert-generation, big_bird, bigbird_pegasus, biogpt, bit, blenderbot, blenderbot-small, blip, blip-2, bloom, bridgetower, bros, camembert, canine, chameleon, chinese_clip, chinese_clip_vision_model, clap, clip, clip_text_model, clip_vision_model, clipseg, clvp, code_llama, codegen, cohere, cohere2, colpali, conditional_detr, convbert, convnext, convnextv2, cpmant, ctrl, cvt, dab-detr, dac, data2vec-audio, data2vec-text, data2vec-vision, dbrx, deberta, deberta-v2, decision_transformer, deepseek_v3, deformable_detr, deit, depth_anything, depth_pro, deta, detr, diffllama, dinat, dinov2, dinov2_with_registers, distilbert, donut-swin, dpr, dpt, efficientformer, efficientnet, electra, emu3, encodec, encoder-decoder, ernie, ernie_m, esm, falcon, falcon_mamba, fastspeech2_conformer, flaubert, flava, fnet, focalnet, fsmt, funnel, fuyu, gemma, gemma2, gemma3, gemma3_text, git, glm, glm4, glpn, got_ocr2, gpt-sw3, gpt2, gpt_bigcode, gpt_neo, gpt_neox, gpt_neox_japanese, gptj, gptsan-japanese, granite, granitemoe, granitemoeshared, granitevision, graphormer, grounding-dino, groupvit, helium, hiera, hubert, ibert, idefics, idefics2, idefics3, idefics3_vision, ijepa, imagegpt, informer, instructblip, instructblipvideo, jamba, jetmoe, jukebox, kosmos-2, layoutlm, layoutlmv2, layoutlmv3, led, levit, lilt, llama, llama4, llama4_text, llava, llava_next, llava_next_video, llava_onevision, longformer, longt5, luke, lxmert, m2m_100, mamba, mamba2, marian, markuplm, mask2former, maskformer, maskformer-swin, mbart, mctct, mega, megatron-bert, mgp-str, mimi, mistral, mistral3, mixtral, mllama, mobilebert, mobilenet_v1, mobilenet_v2, mobilevit, mobilevitv2, modernbert, moonshine, moshi, mpnet, mpt, mra, mt5, musicgen, musicgen_melody, mvp, nat, nemotron, nezha, nllb-moe, nougat, nystromformer, olmo, olmo2, olmoe, omdet-turbo, oneformer, open-llama, openai-gpt, opt, owlv2, owlvit, paligemma, patchtsmixer, patchtst, pegasus, pegasus_x, perceiver, persimmon, phi, phi3, phi4_multimodal, phimoe, pix2struct, pixtral, plbart, poolformer, pop2piano, prompt_depth_anything, prophetnet, pvt, pvt_v2, qdqbert, qwen2, qwen2_5_vl, qwen2_audio, qwen2_audio_encoder, qwen2_moe, qwen2_vl, qwen3, qwen3_moe, rag, realm, recurrent_gemma, reformer, regnet, rembert, resnet, retribert, roberta, roberta-prelayernorm, roc_bert, roformer, rt_detr, rt_detr_resnet, rt_detr_v2, rwkv, sam, sam_vision_model, seamless_m4t, seamless_m4t_v2, segformer, seggpt, sew, sew-d, shieldgemma2, siglip, siglip2, siglip_vision_model, smolvlm, smolvlm_vision, speech-encoder-decoder, speech_to_text, speech_to_text_2, speecht5, splinter, squeezebert, stablelm, starcoder2, superglue, superpoint, swiftformer, swin, swin2sr, swinv2, switch_transformers, t5, table-transformer, tapas, textnet, time_series_transformer, timesformer, timm_backbone, timm_wrapper, trajectory_transformer, transfo-xl, trocr, tvlt, tvp, udop, umt5, unispeech, unispeech-sat, univnet, upernet, van, video_llava, videomae, vilt, vipllava, vision-encoder-decoder, vision-text-dual-encoder, visual_bert, vit, vit_hybrid, vit_mae, vit_msn, vitdet, vitmatte, vitpose, vitpose_backbone, vits, vivit, wav2vec2, wav2vec2-bert, wav2vec2-conformer, wavlm, whisper, xclip, xglm, xlm, xlm-prophetnet, xlm-roberta, xlm-roberta-xl, xlnet, xmod, yolos, yoso, zamba, zamba2, zoedepth)
+INFO:     127.0.0.1:54282 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 05-12 22:16:19 [scheduler.py:514] Timestamp: 1156631.200694511. Scheduler time: 9.568408131599426e-05 seconds. Unique adapters by batch: 1.
+INFO 05-12 22:16:19 [scheduler.py:514] Timestamp: 1156631.278354271. Scheduler time: 2.1281884983181953e-05 seconds. Unique adapters by batch: 0.
+INFO:     127.0.0.1:54296 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54306 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 05-12 22:16:19 [scheduler.py:514] Timestamp: 1156631.344376791. Scheduler time: 7.62580893933773e-05 seconds. Unique adapters by batch: 1.
+INFO:     127.0.0.1:54316 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54326 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54342 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54352 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54358 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54362 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54368 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54370 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54380 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54392 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54402 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54416 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54418 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54432 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54438 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54450 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54460 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54474 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54478 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54490 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54492 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54506 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54512 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54518 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54528 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54536 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54542 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54544 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54558 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54574 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54576 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54590 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54594 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54604 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54606 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54614 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54626 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54632 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54640 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54654 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54662 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54672 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54688 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54690 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54704 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54706 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54712 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54716 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54724 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54732 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54738 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54754 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54762 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54768 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54784 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54794 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54806 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54812 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54826 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54840 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54856 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54862 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 05-12 22:16:19 [scheduler.py:514] Timestamp: 1156631.365129729. Scheduler time: 0.00021900399588048458 seconds. Unique adapters by batch: 1.
+INFO 05-12 22:16:19 [scheduler.py:514] Timestamp: 1156631.470590785. Scheduler time: 0.0002468989696353674 seconds. Unique adapters by batch: 1.
+INFO 05-12 22:16:19 [scheduler.py:514] Timestamp: 1156631.575847709. Scheduler time: 0.0001827471423894167 seconds. Unique adapters by batch: 1.
+INFO 05-12 22:16:19 [scheduler.py:514] Timestamp: 1156631.650509618. Scheduler time: 1.3693002983927727e-05 seconds. Unique adapters by batch: 0.
+INFO:     127.0.0.1:35330 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35338 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35340 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35342 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 05-12 22:16:28 [loggers.py:111] Engine 000: Avg prompt throughput: 11.4 tokens/s, Avg generation throughput: 0.1 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+INFO:     127.0.0.1:35354 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49724 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49740 - "GET /metrics/ HTTP/1.1" 200 OK
