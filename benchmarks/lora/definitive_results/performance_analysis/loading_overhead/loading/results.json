@@ -1,0 +1,32 @@
+{
+    "rank_8": {
+        "first_load": {
+            "disk->CPUMem": 0.103859,
+            "CPUMem->GPUMem": 0.008537
+        },
+        "consecutive_loads": {
+            "disk->CPUMem": 0.041396,
+            "CPUMem->GPUMem": 0.008613667
+        }
+    },
+    "rank_16": {
+        "first_load": {
+            "disk->CPUMem": 0.263469,
+            "CPUMem->GPUMem": 0.009325
+        },
+        "consecutive_loads": {
+            "disk->CPUMem": 0.068332667,
+            "CPUMem->GPUMem": 0.009064
+        }
+    },
+    "rank_32": {
+        "first_load": {
+            "disk->CPUMem": 0.509965,
+            "CPUMem->GPUMem": 0.008432
+        },
+        "consecutive_loads": {
+            "disk->CPUMem": 0.086997333,
+            "CPUMem->GPUMem": 0.008484
+        }
+    }
+}

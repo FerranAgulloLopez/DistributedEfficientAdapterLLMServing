@@ -1,0 +1,1 @@
+{"date": "20250408-203452", "backend": "openai", "model_id": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b", "tokenizer_id": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b", "best_of": 1, "use_beam_search": false, "num_prompts": 4096, "request_rate": Infinity, "infinite_behaviour": ""}
