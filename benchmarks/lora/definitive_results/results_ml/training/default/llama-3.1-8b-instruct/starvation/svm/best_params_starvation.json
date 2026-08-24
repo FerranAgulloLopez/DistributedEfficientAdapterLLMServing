@@ -1,0 +1,7 @@
+{
+    "C": 100.0,
+    "coef0": 1.0,
+    "degree": 4,
+    "gamma": "scale",
+    "kernel": "poly"
+}

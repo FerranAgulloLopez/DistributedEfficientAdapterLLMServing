@@ -1,0 +1,2 @@
+- Small Tree and Small Tree** time results are together in log_XXX.out file inside the corresponding experiment folder under lines that start by "Training finished" and "FAST NUMBA", respectively.
+- Both Small Tree and Small Tree** have the same rules, the only difference is the implementation of them.

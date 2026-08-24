@@ -1,0 +1,8 @@
+{
+    "C": 10000.0,
+    "coef0": 1.0,
+    "degree": 4,
+    "epsilon": 5,
+    "gamma": "scale",
+    "kernel": "rbf"
+}

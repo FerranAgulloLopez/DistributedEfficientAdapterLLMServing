@@ -1,0 +1,3 @@
+target,model,r_2,smape,time
+total_throughput,rf_simpler,0.85,10.25,0.00
+itl,rf_simpler,0.32,18.16,0.00

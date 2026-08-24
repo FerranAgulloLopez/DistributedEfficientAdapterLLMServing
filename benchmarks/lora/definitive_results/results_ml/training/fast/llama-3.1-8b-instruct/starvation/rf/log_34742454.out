@@ -1,0 +1,26 @@
+
+
+Training to predict starvation
+FAST. Training finished. Obtained results in test: Accuracy -> 0.924812030075188; F1-macro -> 0.9248077792853913; time -> 0.002028532606318481
+FAST NUMBA. Training finished. Obtained results in test: Accuracy -> 0.924812030075188; F1-macro -> 0.9248077792853913; time -> 8.302775764823856e-05
+Training finished. Obtained results in test: Accuracy -> 0.924812030075188; F1-macro -> 0.9248077792853913; time -> 0.003254251148467673
+
+
+
+ Rules for starvation N# 16
+sum_rate <= 23.519 AND sum_rate <= 19.981 AND sum_rate <= 13.881 AND served_adapters <= 352.000 => 0.9994575829898026
+sum_rate <= 23.519 AND sum_rate <= 19.981 AND sum_rate <= 13.881 AND served_adapters > 352.000 => 0.9670886075949368
+sum_rate <= 23.519 AND sum_rate <= 19.981 AND sum_rate > 13.881 AND adapter_slots <= 12.000 => 0.6374172185430463
+sum_rate <= 23.519 AND sum_rate <= 19.981 AND sum_rate > 13.881 AND adapter_slots > 12.000 => 0.9813532232285562
+sum_rate <= 23.519 AND sum_rate > 19.981 AND adapter_slots <= 80.000 AND adapter_slots <= 12.000 => 0.3333333333333333
+sum_rate <= 23.519 AND sum_rate > 19.981 AND adapter_slots <= 80.000 AND adapter_slots > 12.000 => 0.9409722222222222
+sum_rate <= 23.519 AND sum_rate > 19.981 AND adapter_slots > 80.000 AND std_rate <= 0.185 => 0.08661417322834646
+sum_rate <= 23.519 AND sum_rate > 19.981 AND adapter_slots > 80.000 AND std_rate > 0.185 => 0.7272727272727273
+sum_rate > 23.519 AND sum_rate <= 27.506 AND adapter_slots <= 12.000 AND sum_rate <= 25.388 => 0.2222222222222222
+sum_rate > 23.519 AND sum_rate <= 27.506 AND adapter_slots <= 12.000 AND sum_rate > 25.388 => 0.0
+sum_rate > 23.519 AND sum_rate <= 27.506 AND adapter_slots > 12.000 AND served_adapters <= 144.000 => 0.6495412844036698
+sum_rate > 23.519 AND sum_rate <= 27.506 AND adapter_slots > 12.000 AND served_adapters > 144.000 => 0.21428571428571427
+sum_rate > 23.519 AND sum_rate > 27.506 AND std_rate <= 1.514 AND served_adapters <= 24.000 => 0.4444444444444444
+sum_rate > 23.519 AND sum_rate > 27.506 AND std_rate <= 1.514 AND served_adapters > 24.000 => 0.0028055583061029144
+sum_rate > 23.519 AND sum_rate > 27.506 AND std_rate > 1.514 AND served_adapters <= 48.000 => 0.7894736842105263
+sum_rate > 23.519 AND sum_rate > 27.506 AND std_rate > 1.514 AND served_adapters > 48.000 => 0.0

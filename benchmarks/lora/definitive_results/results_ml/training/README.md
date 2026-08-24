@@ -1,0 +1,2 @@
+- SMAPE, F1 and inference time results are in test_results.csv file inside the corresponding experiment folder
+- ML training time and number of rules (the latter only for rf model) are in log_XXX.out file inside the corresponding experiment folder

@@ -1,0 +1,84 @@
+
+
+Training to predict total_throughput
+FAST. Training finished. Obtained results in test: R2 -> 0.8456643055479744; SMAPE -> 10.253387695669037; time -> 0.002319952543068649
+FAST NUMBA. Training finished. Obtained results in test: R2 -> 0.8456643055479744; SMAPE -> 10.253387695669037; time -> 0.00011313118432697497
+Training finished. Obtained results in test: R2 -> 0.8456643055479744; SMAPE -> 10.253387695669037; time -> 0.0032407714796245544
+
+
+
+ Rules for total_throughput N# 32
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size <= 11.282 AND sum_rate <= 3.277 AND adapter_slots <= 24.000 => 589.330172301425
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size <= 11.282 AND sum_rate <= 3.277 AND adapter_slots > 24.000 => 860.521476778444
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size <= 11.282 AND sum_rate > 3.277 AND std_rate <= 0.016 => 1984.0719105731682
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size <= 11.282 AND sum_rate > 3.277 AND std_rate > 0.016 => 2881.951475492628
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size > 11.282 AND mean_size <= 15.959 AND adapter_slots <= 80.000 => 2172.1224513533352
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size > 11.282 AND mean_size <= 15.959 AND adapter_slots > 80.000 => 2638.550673088388
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size > 11.282 AND mean_size > 15.959 AND sum_rate <= 4.000 => 989.6251861961621
+std_rate <= 0.100 AND std_rate <= 0.031 AND std_size > 11.282 AND mean_size > 15.959 AND sum_rate > 4.000 => 3218.8786685410228
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters <= 176.000 AND mean_size <= 18.531 AND sum_rate <= 3.152 => 735.9250576399397
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters <= 176.000 AND mean_size <= 18.531 AND sum_rate > 3.152 => 2655.4234240393575
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters <= 176.000 AND mean_size > 18.531 AND std_size <= 7.464 => 1751.047563602521
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters <= 176.000 AND mean_size > 18.531 AND std_size > 7.464 => 2631.292240580222
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters > 176.000 AND sum_rate <= 12.534 AND sum_rate <= 9.098 => 3617.6605448343503
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters > 176.000 AND sum_rate <= 12.534 AND sum_rate > 9.098 => 4913.598512880849
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters > 176.000 AND sum_rate > 12.534 AND adapter_slots <= 12.000 => 6439.515620966142
+std_rate <= 0.100 AND std_rate > 0.031 AND served_adapters > 176.000 AND sum_rate > 12.534 AND adapter_slots > 12.000 => 7220.0072985658235
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size <= 10.758 AND std_rate <= 0.876 AND adapter_slots <= 12.000 => 2494.1302429900984
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size <= 10.758 AND std_rate <= 0.876 AND adapter_slots > 12.000 => 3430.653221868265
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size <= 10.758 AND std_rate > 0.876 AND sum_rate <= 17.623 => 5475.671209145199
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size <= 10.758 AND std_rate > 0.876 AND sum_rate > 17.623 => 10029.543043326501
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size > 10.758 AND sum_rate <= 10.983 AND adapter_slots <= 12.000 => 2429.3876123702667
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size > 10.758 AND sum_rate <= 10.983 AND adapter_slots > 12.000 => 2599.219452435033
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size > 10.758 AND sum_rate > 10.983 AND adapter_slots <= 12.000 => 8798.671525948439
+std_rate > 0.100 AND served_adapters <= 24.000 AND std_size > 10.758 AND sum_rate > 10.983 AND adapter_slots > 12.000 => 9250.60568003274
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters <= 48.000 AND std_rate <= 0.438 AND max_size <= 24.000 => 3845.1433011414306
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters <= 48.000 AND std_rate <= 0.438 AND max_size > 24.000 => 3891.059092221558
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters <= 48.000 AND std_rate > 0.438 AND max_size <= 24.000 => 12065.088301889455
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters <= 48.000 AND std_rate > 0.438 AND max_size > 24.000 => 11822.486457777739
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters > 48.000 AND adapter_slots <= 48.000 AND sum_rate <= 22.262 => 7094.964451577083
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters > 48.000 AND adapter_slots <= 48.000 AND sum_rate > 22.262 => 12483.35383839146
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters > 48.000 AND adapter_slots > 48.000 AND sum_rate <= 15.650 => 5730.933912111309
+std_rate > 0.100 AND served_adapters > 24.000 AND served_adapters > 48.000 AND adapter_slots > 48.000 AND sum_rate > 15.650 => 9175.916642195732
+
+
+Training to predict itl
+FAST. Training finished. Obtained results in test: R2 -> 0.320789042784981; SMAPE -> 18.15613354485217; time -> 0.002328831618441675
+FAST NUMBA. Training finished. Obtained results in test: R2 -> 0.320789042784981; SMAPE -> 18.15613354485217; time -> 4.9016977611340973e-05
+Training finished. Obtained results in test: R2 -> 0.320789042784981; SMAPE -> 18.15613354485217; time -> 0.0035989035229037577
+
+
+
+ Rules for itl N# 32
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters <= 224.000 AND std_rate <= 0.031 AND std_size <= 3.761 => 22.243021376375527
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters <= 224.000 AND std_rate <= 0.031 AND std_size > 3.761 => 23.694953393213975
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters <= 224.000 AND std_rate > 0.031 AND sum_rate <= 7.028 => 25.285205261377737
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters <= 224.000 AND std_rate > 0.031 AND sum_rate > 7.028 => 36.497453274336706
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters > 224.000 AND adapter_slots <= 80.000 AND sum_rate <= 12.534 => 30.40278273898427
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters > 224.000 AND adapter_slots <= 80.000 AND sum_rate > 12.534 => 44.678830080233325
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters > 224.000 AND adapter_slots > 80.000 AND sum_rate <= 11.744 => 41.8827824244475
+std_size <= 3.791 AND std_rate <= 0.100 AND served_adapters > 224.000 AND adapter_slots > 80.000 AND sum_rate > 11.744 => 106.39194959054834
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate <= 21.731 AND served_adapters <= 112.000 AND std_rate <= 0.162 => 48.30686264920945
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate <= 21.731 AND served_adapters <= 112.000 AND std_rate > 0.162 => 32.372935130691864
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate <= 21.731 AND served_adapters > 112.000 AND adapter_slots <= 48.000 => 47.04987991565172
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate <= 21.731 AND served_adapters > 112.000 AND adapter_slots > 48.000 => 83.0092802898796
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate > 21.731 AND sum_rate <= 38.550 AND served_adapters <= 48.000 => 64.81512863400529
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate > 21.731 AND sum_rate <= 38.550 AND served_adapters > 48.000 => 87.82294436064902
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate > 21.731 AND sum_rate > 38.550 AND mean_size <= 24.000 => 100.6381043405907
+std_size <= 3.791 AND std_rate > 0.100 AND sum_rate > 21.731 AND sum_rate > 38.550 AND mean_size > 24.000 => 90.51858466106042
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate <= 24.450 AND std_rate <= 0.621 AND sum_rate <= 8.450 => 21.637571811031485
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate <= 24.450 AND std_rate <= 0.621 AND sum_rate > 8.450 => 29.741952684217168
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate <= 24.450 AND std_rate > 0.621 AND std_size <= 3.836 => 41.039910369597635
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate <= 24.450 AND std_rate > 0.621 AND std_size > 3.836 => 32.45158065125804
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate > 24.450 AND std_rate <= 1.325 AND std_rate <= 1.298 => 70.9099024989773
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate > 24.450 AND std_rate <= 1.325 AND std_rate > 1.298 => 47.31589685787235
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate > 24.450 AND std_rate > 1.325 AND adapter_slots <= 12.000 => 65.64396719333632
+std_size > 3.791 AND served_adapters <= 48.000 AND sum_rate > 24.450 AND std_rate > 1.325 AND adapter_slots > 12.000 => 83.38742756162702
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate <= 19.541 AND served_adapters <= 224.000 AND mean_size <= 21.275 => 31.129570454987014
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate <= 19.541 AND served_adapters <= 224.000 AND mean_size > 21.275 => 29.670552740741336
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate <= 19.541 AND served_adapters > 224.000 AND mean_size <= 18.646 => 38.16322201411048
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate <= 19.541 AND served_adapters > 224.000 AND mean_size > 18.646 => 41.45211143992935
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate > 19.541 AND std_size <= 7.522 AND std_rate <= 0.359 => 72.3885948024528
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate > 19.541 AND std_size <= 7.522 AND std_rate > 0.359 => 85.40757502427599
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate > 19.541 AND std_size > 7.522 AND served_adapters <= 112.000 => 81.84218373566095
+std_size > 3.791 AND served_adapters > 48.000 AND sum_rate > 19.541 AND std_size > 7.522 AND served_adapters > 112.000 => 86.92172726510222

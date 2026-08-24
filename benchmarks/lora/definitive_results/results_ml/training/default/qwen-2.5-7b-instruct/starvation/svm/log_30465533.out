@@ -1,0 +1,51 @@
+
+
+Training to predict starvation
+n_iterations: 8
+n_required_iterations: 8
+n_possible_iterations: 8
+min_resources_: 27
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 2304
+n_resources: 27
+Fitting 5 folds for each of 2304 candidates, totalling 11520 fits
+----------
+iter: 1
+n_candidates: 768
+n_resources: 81
+Fitting 5 folds for each of 768 candidates, totalling 3840 fits
+----------
+iter: 2
+n_candidates: 256
+n_resources: 243
+Fitting 5 folds for each of 256 candidates, totalling 1280 fits
+----------
+iter: 3
+n_candidates: 86
+n_resources: 729
+Fitting 5 folds for each of 86 candidates, totalling 430 fits
+----------
+iter: 4
+n_candidates: 29
+n_resources: 2187
+Fitting 5 folds for each of 29 candidates, totalling 145 fits
+----------
+iter: 5
+n_candidates: 10
+n_resources: 6561
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+----------
+iter: 6
+n_candidates: 4
+n_resources: 19683
+Fitting 5 folds for each of 4 candidates, totalling 20 fits
+----------
+iter: 7
+n_candidates: 2
+n_resources: 59049
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Training finished. Obtained results in test: Accuracy -> 0.926829268292683; F1-macro -> 0.9257246376811594; time -> 0.04589353636952071

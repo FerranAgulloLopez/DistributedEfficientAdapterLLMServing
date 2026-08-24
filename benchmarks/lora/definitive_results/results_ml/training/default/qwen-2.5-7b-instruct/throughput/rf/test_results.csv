@@ -1,0 +1,4 @@
+target,model,r_2,smape,time
+total_throughput,rf,0.93,5.28,0.21
+itl,rf,0.85,8.96,0.20
+ttft,rf,0.75,18.30,0.28

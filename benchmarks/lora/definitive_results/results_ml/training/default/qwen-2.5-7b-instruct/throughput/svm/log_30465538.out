@@ -1,0 +1,153 @@
+
+
+Training to predict total_throughput
+n_iterations: 8
+n_required_iterations: 9
+n_possible_iterations: 8
+min_resources_: 10
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 9216
+n_resources: 10
+Fitting 5 folds for each of 9216 candidates, totalling 46080 fits
+----------
+iter: 1
+n_candidates: 3072
+n_resources: 30
+Fitting 5 folds for each of 3072 candidates, totalling 15360 fits
+----------
+iter: 2
+n_candidates: 1024
+n_resources: 90
+Fitting 5 folds for each of 1024 candidates, totalling 5120 fits
+----------
+iter: 3
+n_candidates: 342
+n_resources: 270
+Fitting 5 folds for each of 342 candidates, totalling 1710 fits
+----------
+iter: 4
+n_candidates: 114
+n_resources: 810
+Fitting 5 folds for each of 114 candidates, totalling 570 fits
+----------
+iter: 5
+n_candidates: 38
+n_resources: 2430
+Fitting 5 folds for each of 38 candidates, totalling 190 fits
+----------
+iter: 6
+n_candidates: 13
+n_resources: 7290
+Fitting 5 folds for each of 13 candidates, totalling 65 fits
+----------
+iter: 7
+n_candidates: 5
+n_resources: 21870
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+Training finished. Obtained results in test: R2 -> 0.8336604575355886; SMAPE -> 7.457126562341387; time -> 2.243640029053317
+
+
+Training to predict itl
+n_iterations: 8
+n_required_iterations: 9
+n_possible_iterations: 8
+min_resources_: 10
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 9216
+n_resources: 10
+Fitting 5 folds for each of 9216 candidates, totalling 46080 fits
+----------
+iter: 1
+n_candidates: 3072
+n_resources: 30
+Fitting 5 folds for each of 3072 candidates, totalling 15360 fits
+----------
+iter: 2
+n_candidates: 1024
+n_resources: 90
+Fitting 5 folds for each of 1024 candidates, totalling 5120 fits
+----------
+iter: 3
+n_candidates: 342
+n_resources: 270
+Fitting 5 folds for each of 342 candidates, totalling 1710 fits
+----------
+iter: 4
+n_candidates: 114
+n_resources: 810
+Fitting 5 folds for each of 114 candidates, totalling 570 fits
+----------
+iter: 5
+n_candidates: 38
+n_resources: 2430
+Fitting 5 folds for each of 38 candidates, totalling 190 fits
+----------
+iter: 6
+n_candidates: 13
+n_resources: 7290
+Fitting 5 folds for each of 13 candidates, totalling 65 fits
+----------
+iter: 7
+n_candidates: 5
+n_resources: 21870
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+Training finished. Obtained results in test: R2 -> 0.633786308191564; SMAPE -> 12.613935686259584; time -> 1.3066106646253568
+
+
+Training to predict ttft
+n_iterations: 8
+n_required_iterations: 9
+n_possible_iterations: 8
+min_resources_: 10
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 9216
+n_resources: 10
+Fitting 5 folds for each of 9216 candidates, totalling 46080 fits
+----------
+iter: 1
+n_candidates: 3072
+n_resources: 30
+Fitting 5 folds for each of 3072 candidates, totalling 15360 fits
+----------
+iter: 2
+n_candidates: 1024
+n_resources: 90
+Fitting 5 folds for each of 1024 candidates, totalling 5120 fits
+----------
+iter: 3
+n_candidates: 342
+n_resources: 270
+Fitting 5 folds for each of 342 candidates, totalling 1710 fits
+----------
+iter: 4
+n_candidates: 114
+n_resources: 810
+Fitting 5 folds for each of 114 candidates, totalling 570 fits
+----------
+iter: 5
+n_candidates: 38
+n_resources: 2430
+Fitting 5 folds for each of 38 candidates, totalling 190 fits
+----------
+iter: 6
+n_candidates: 13
+n_resources: 7290
+Fitting 5 folds for each of 13 candidates, totalling 65 fits
+----------
+iter: 7
+n_candidates: 5
+n_resources: 21870
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+Training finished. Obtained results in test: R2 -> -1.8064753865714152; SMAPE -> 70.2960484060694; time -> 2.1237328921149414

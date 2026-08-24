@@ -1,0 +1,162 @@
+
+
+Training to predict total_throughput
+n_iterations: 8
+n_required_iterations: 8
+n_possible_iterations: 8
+min_resources_: 20
+max_resources_: 44761
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 3456
+n_resources: 20
+Fitting 5 folds for each of 3456 candidates, totalling 17280 fits
+----------
+iter: 1
+n_candidates: 1152
+n_resources: 60
+Fitting 5 folds for each of 1152 candidates, totalling 5760 fits
+----------
+iter: 2
+n_candidates: 384
+n_resources: 180
+Fitting 5 folds for each of 384 candidates, totalling 1920 fits
+----------
+iter: 3
+n_candidates: 128
+n_resources: 540
+Fitting 5 folds for each of 128 candidates, totalling 640 fits
+----------
+iter: 4
+n_candidates: 43
+n_resources: 1620
+Fitting 5 folds for each of 43 candidates, totalling 215 fits
+----------
+iter: 5
+n_candidates: 15
+n_resources: 4860
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+----------
+iter: 6
+n_candidates: 5
+n_resources: 14580
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+----------
+iter: 7
+n_candidates: 2
+n_resources: 43740
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Hypeparameter search time: 268.0337856588885
+Training finished. Obtained results in test: R2 -> 0.9516641636991862; SMAPE -> 4.386878666359017; time -> 0.24718976635625936
+
+ Rules for total_throughput N# 6799803
+
+
+Training to predict itl
+n_iterations: 8
+n_required_iterations: 8
+n_possible_iterations: 8
+min_resources_: 20
+max_resources_: 44761
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 3456
+n_resources: 20
+Fitting 5 folds for each of 3456 candidates, totalling 17280 fits
+----------
+iter: 1
+n_candidates: 1152
+n_resources: 60
+Fitting 5 folds for each of 1152 candidates, totalling 5760 fits
+----------
+iter: 2
+n_candidates: 384
+n_resources: 180
+Fitting 5 folds for each of 384 candidates, totalling 1920 fits
+----------
+iter: 3
+n_candidates: 128
+n_resources: 540
+Fitting 5 folds for each of 128 candidates, totalling 640 fits
+----------
+iter: 4
+n_candidates: 43
+n_resources: 1620
+Fitting 5 folds for each of 43 candidates, totalling 215 fits
+----------
+iter: 5
+n_candidates: 15
+n_resources: 4860
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+----------
+iter: 6
+n_candidates: 5
+n_resources: 14580
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+----------
+iter: 7
+n_candidates: 2
+n_resources: 43740
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Hypeparameter search time: 276.29667596612126
+Training finished. Obtained results in test: R2 -> 0.6897515105246919; SMAPE -> 10.991122090924375; time -> 0.23513966891214363
+
+ Rules for itl N# 7131496
+
+
+Training to predict ttft
+n_iterations: 8
+n_required_iterations: 8
+n_possible_iterations: 8
+min_resources_: 20
+max_resources_: 44761
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 3456
+n_resources: 20
+Fitting 5 folds for each of 3456 candidates, totalling 17280 fits
+----------
+iter: 1
+n_candidates: 1152
+n_resources: 60
+Fitting 5 folds for each of 1152 candidates, totalling 5760 fits
+----------
+iter: 2
+n_candidates: 384
+n_resources: 180
+Fitting 5 folds for each of 384 candidates, totalling 1920 fits
+----------
+iter: 3
+n_candidates: 128
+n_resources: 540
+Fitting 5 folds for each of 128 candidates, totalling 640 fits
+----------
+iter: 4
+n_candidates: 43
+n_resources: 1620
+Fitting 5 folds for each of 43 candidates, totalling 215 fits
+----------
+iter: 5
+n_candidates: 15
+n_resources: 4860
+Fitting 5 folds for each of 15 candidates, totalling 75 fits
+----------
+iter: 6
+n_candidates: 5
+n_resources: 14580
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+----------
+iter: 7
+n_candidates: 2
+n_resources: 43740
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Hypeparameter search time: 257.81639555003494
+Training finished. Obtained results in test: R2 -> 0.7489658044344478; SMAPE -> 19.07636813351594; time -> 0.1361969179172713
+
+ Rules for ttft N# 888190

@@ -1,0 +1,2 @@
+target,model,accuracy,f1_macro,time
+starvation,rf_simpler,0.92,0.92,0.00

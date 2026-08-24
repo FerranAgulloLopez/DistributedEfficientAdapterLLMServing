@@ -1,0 +1,8 @@
+{
+    "criterion": "gini",
+    "max_depth": 4,
+    "max_features": null,
+    "min_samples_leaf": 10,
+    "n_estimators": 1,
+    "n_jobs": -1
+}

@@ -170,7 +170,7 @@ cython_debug/
 .DS_Store
 
 # Python pickle files
-*.pkl
+# *.pkl
 
 # Sphinx documentation
 _build/

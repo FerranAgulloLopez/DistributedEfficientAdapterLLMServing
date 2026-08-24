@@ -1,0 +1,243 @@
+load ANACONDA/2023.07 (PATH)
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:516: FitFailedWarning: 
+5760 fits failed out of a total of 17280.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1862 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'log2', 'sqrt'} or None. Got 'auto' instead.
+
+--------------------------------------------------------------------------------
+3898 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'sqrt', 'log2'} or None. Got 'auto' instead.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -22.22420378 -22.39867104
+ -22.44441205]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan          nan ... -20.83206763 -20.89265933
+ -20.93090963]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -11.77513673 -11.85473641
+ -11.03341619]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -5.46859534 -6.05819209
+ -5.86210635]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -9.84910297 -8.58964209
+ -8.70680976]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -5.85703295 -3.59979247
+ -3.66366193]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -5.05776653 -4.91859279
+ -4.95074668]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -2.38684409 -2.77886713
+ -2.43607986]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -2.69201362 -2.78326625
+ -2.80670715]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -1.16788122 -1.19469886
+ -1.20009857]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -1.65694326 -1.68539471
+ -1.65117265]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -0.6356686  -0.66090239
+ -0.6371884 ]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -1.03323412 -0.99929361
+ -1.0081676 ]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -0.35777763 -0.35819778
+ -0.34358302]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [       nan        nan        nan ... -1.0081676 -0.6094487 -0.6112395]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -0.34358302 -0.20248807
+ -0.24225165]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:516: FitFailedWarning: 
+5760 fits failed out of a total of 17280.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3447 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'sqrt', 'log2'} or None. Got 'auto' instead.
+
+--------------------------------------------------------------------------------
+2313 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'log2', 'sqrt'} or None. Got 'auto' instead.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -17.90578838 -18.05351145
+ -17.98721101]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan          nan ... -14.68391697 -14.55006238
+ -14.54112711]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -8.16206591 -8.45576617
+ -8.42476445]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -3.40092667 -3.51587281
+ -3.84730596]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -5.44179874 -6.09742583
+ -5.74517456]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -2.103246   -3.89949671
+ -2.25511247]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -3.31997319 -3.44090222
+ -3.28878577]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -1.2635686  -1.5646327
+ -1.30496826]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -2.24045118 -2.24270071
+ -2.1655588 ]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -0.83754541 -0.83171792
+ -0.80534545]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -1.41261445 -1.42598375
+ -1.40372029]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -0.53110542 -0.53038726
+ -0.52891694]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -0.85446278 -0.84179539
+ -0.84358853]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -0.34193457 -0.34266063
+ -0.34509728]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -0.84358853 -0.49954864
+ -0.4918197 ]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -0.34509728 -0.24616079
+ -0.21135615]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:516: FitFailedWarning: 
+5760 fits failed out of a total of 17280.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+3426 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'sqrt', 'log2'} or None. Got 'auto' instead.
+
+--------------------------------------------------------------------------------
+2334 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'log2', 'sqrt'} or None. Got 'auto' instead.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -43.65726565 -43.7587048
+ -43.59449175]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan          nan ... -34.0834453  -34.38025842
+ -34.11047752]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -35.46080277 -35.01564684
+ -33.63755584]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan          nan ... -24.28348094 -24.4591402
+ -20.68422733]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -23.71870273 -23.44253297
+ -22.32127682]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan          nan ... -13.16029176 -13.37715625
+ -12.59576776]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -15.57745047 -16.75011705
+ -16.39910572]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan          nan ...  -9.76793836 -10.45117268
+  -9.37051728]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan          nan ... -12.59899812 -12.36999831
+ -12.15010626]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -7.6939585  -6.52180089
+ -6.38262365]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -7.85768034 -7.65714268
+ -7.76900021]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -3.98027858 -3.90257642
+ -3.86099524]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -5.01751208 -5.02227667
+ -4.98448626]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -2.30243132 -2.27924062
+ -2.28170936]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [        nan         nan         nan ... -4.98448626 -2.86277575
+ -2.79829661]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [        nan         nan         nan ... -2.28170936 -1.49506155
+ -1.40256092]
+  warnings.warn(

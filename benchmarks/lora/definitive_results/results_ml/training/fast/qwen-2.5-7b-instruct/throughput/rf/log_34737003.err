@@ -1,0 +1,300 @@
+load ANACONDA/2023.07 (PATH)
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:516: FitFailedWarning: 
+80 fits failed out of a total of 240.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+48 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'log2', 'sqrt'} or None. Got 'auto' instead.
+
+--------------------------------------------------------------------------------
+32 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'sqrt', 'log2'} or None. Got 'auto' instead.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -14.18993922 -14.01820449 -14.49053392
+ -17.05955723          nan          nan -11.00167738 -14.92460031
+ -12.28473579 -15.42791348          nan          nan -15.01841058
+ -15.2905819  -12.47812233 -16.94174733          nan          nan
+ -11.71458147 -13.50748278 -11.66225262 -15.32386756          nan
+          nan -14.87711574 -14.01186884 -16.30650878 -14.85383623
+          nan          nan -10.37476211 -14.46852212 -11.7142635
+ -14.16551068          nan          nan -15.82551429 -15.04489511
+ -11.64708858 -18.03700447          nan          nan -11.95688179
+ -16.55896704 -12.06454164 -15.65247548]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -14.11912041 -14.11230962 -14.6751384
+ -16.50354769          nan          nan -10.20390631 -14.30136963
+ -11.64043458 -14.89490994          nan          nan -14.8491892
+ -14.99670981 -12.75687079 -16.65338569          nan          nan
+ -10.4492077  -13.25618553 -11.08953548 -14.59613161          nan
+          nan -14.86781275 -13.96253783 -15.8207589  -14.48798706
+          nan          nan  -9.55071732 -13.86921354 -11.33590844
+ -13.6932741           nan          nan -15.77400853 -15.22604287
+ -11.94687879 -17.91233395          nan          nan -11.1675501
+ -15.98652648 -11.76572078 -15.40875471]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -14.18993922 -14.01820449 -14.49053392
+ -17.05955723          nan          nan -11.00167738 -14.92460031
+ -12.28473579 -15.42791348          nan          nan -15.01841058
+ -15.2905819  -12.47812233 -16.94174733          nan          nan
+ -11.71458147 -13.50748278 -11.66225262 -15.32386756          nan
+          nan -14.87711574 -14.01186884 -16.30650878 -14.85383623
+          nan          nan -10.37476211 -14.46852212 -11.7142635
+ -14.16551068          nan          nan -15.82551429 -15.04489511
+ -11.64708858 -18.03700447          nan          nan -11.95688179
+ -16.55896704 -12.06454164 -15.65247548 -13.74529548 -15.13172028
+ -12.64470006 -16.70988208 -13.87282482 -11.23373095 -13.10701332
+  -9.04758901 -11.04514324  -9.43247857 -10.97088532 -10.01541344
+ -11.13273585 -13.20406607 -11.82019759 -12.35465769]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -14.11912041 -14.11230962 -14.6751384
+ -16.50354769          nan          nan -10.20390631 -14.30136963
+ -11.64043458 -14.89490994          nan          nan -14.8491892
+ -14.99670981 -12.75687079 -16.65338569          nan          nan
+ -10.4492077  -13.25618553 -11.08953548 -14.59613161          nan
+          nan -14.86781275 -13.96253783 -15.8207589  -14.48798706
+          nan          nan  -9.55071732 -13.86921354 -11.33590844
+ -13.6932741           nan          nan -15.77400853 -15.22604287
+ -11.94687879 -17.91233395          nan          nan -11.1675501
+ -15.98652648 -11.76572078 -15.40875471 -13.39864463 -15.21869826
+ -12.23938759 -16.41409074 -13.92027543 -11.08188867 -13.17594345
+  -8.9549786  -10.8564271   -9.21455204 -10.86277865  -9.9549832
+ -10.78681558 -13.15970473 -11.31638924 -12.25354691]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -14.18993922 -14.01820449 -14.49053392
+ -17.05955723          nan          nan -11.00167738 -14.92460031
+ -12.28473579 -15.42791348          nan          nan -15.01841058
+ -15.2905819  -12.47812233 -16.94174733          nan          nan
+ -11.71458147 -13.50748278 -11.66225262 -15.32386756          nan
+          nan -14.87711574 -14.01186884 -16.30650878 -14.85383623
+          nan          nan -10.37476211 -14.46852212 -11.7142635
+ -14.16551068          nan          nan -15.82551429 -15.04489511
+ -11.64708858 -18.03700447          nan          nan -11.95688179
+ -16.55896704 -12.06454164 -15.65247548 -13.74529548 -15.13172028
+ -12.64470006 -16.70988208 -13.87282482 -11.23373095 -13.10701332
+  -9.04758901 -11.04514324  -9.43247857 -10.97088532 -10.01541344
+ -11.13273585 -13.20406607 -11.82019759 -12.35465769  -9.44124814
+ -10.11864752 -10.85304459 -12.33358425 -13.54579842 -10.80037551]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -14.11912041 -14.11230962 -14.6751384
+ -16.50354769          nan          nan -10.20390631 -14.30136963
+ -11.64043458 -14.89490994          nan          nan -14.8491892
+ -14.99670981 -12.75687079 -16.65338569          nan          nan
+ -10.4492077  -13.25618553 -11.08953548 -14.59613161          nan
+          nan -14.86781275 -13.96253783 -15.8207589  -14.48798706
+          nan          nan  -9.55071732 -13.86921354 -11.33590844
+ -13.6932741           nan          nan -15.77400853 -15.22604287
+ -11.94687879 -17.91233395          nan          nan -11.1675501
+ -15.98652648 -11.76572078 -15.40875471 -13.39864463 -15.21869826
+ -12.23938759 -16.41409074 -13.92027543 -11.08188867 -13.17594345
+  -8.9549786  -10.8564271   -9.21455204 -10.86277865  -9.9549832
+ -10.78681558 -13.15970473 -11.31638924 -12.25354691  -9.39138397
+ -10.26336771 -11.02305796 -11.89680935 -13.50389807 -10.84901846]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -14.18993922 -14.01820449 -14.49053392
+ -17.05955723          nan          nan -11.00167738 -14.92460031
+ -12.28473579 -15.42791348          nan          nan -15.01841058
+ -15.2905819  -12.47812233 -16.94174733          nan          nan
+ -11.71458147 -13.50748278 -11.66225262 -15.32386756          nan
+          nan -14.87711574 -14.01186884 -16.30650878 -14.85383623
+          nan          nan -10.37476211 -14.46852212 -11.7142635
+ -14.16551068          nan          nan -15.82551429 -15.04489511
+ -11.64708858 -18.03700447          nan          nan -11.95688179
+ -16.55896704 -12.06454164 -15.65247548 -13.74529548 -15.13172028
+ -12.64470006 -16.70988208 -13.87282482 -11.23373095 -13.10701332
+  -9.04758901 -11.04514324  -9.43247857 -10.97088532 -10.01541344
+ -11.13273585 -13.20406607 -11.82019759 -12.35465769  -9.44124814
+ -10.11864752 -10.85304459 -12.33358425 -13.54579842 -10.80037551
+ -12.12298081  -9.35307297]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -14.11912041 -14.11230962 -14.6751384
+ -16.50354769          nan          nan -10.20390631 -14.30136963
+ -11.64043458 -14.89490994          nan          nan -14.8491892
+ -14.99670981 -12.75687079 -16.65338569          nan          nan
+ -10.4492077  -13.25618553 -11.08953548 -14.59613161          nan
+          nan -14.86781275 -13.96253783 -15.8207589  -14.48798706
+          nan          nan  -9.55071732 -13.86921354 -11.33590844
+ -13.6932741           nan          nan -15.77400853 -15.22604287
+ -11.94687879 -17.91233395          nan          nan -11.1675501
+ -15.98652648 -11.76572078 -15.40875471 -13.39864463 -15.21869826
+ -12.23938759 -16.41409074 -13.92027543 -11.08188867 -13.17594345
+  -8.9549786  -10.8564271   -9.21455204 -10.86277865  -9.9549832
+ -10.78681558 -13.15970473 -11.31638924 -12.25354691  -9.39138397
+ -10.26336771 -11.02305796 -11.89680935 -13.50389807 -10.84901846
+ -11.75176524  -9.18236064]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:516: FitFailedWarning: 
+80 fits failed out of a total of 240.
+The score on these train-test partitions for these parameters will be set to nan.
+If these failures are not expected, you can try to debug them by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+44 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'log2', 'sqrt'} or None. Got 'auto' instead.
+
+--------------------------------------------------------------------------------
+36 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 1358, in wrapper
+    estimator._validate_params()
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/base.py", line 471, in _validate_params
+    validate_parameter_constraints(
+  File "/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 98, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'max_features' parameter of RandomForestRegressor must be an int in the range [1, inf), a float in the range (0.0, 1.0], a str among {'sqrt', 'log2'} or None. Got 'auto' instead.
+
+  warnings.warn(some_fits_failed_message, FitFailedWarning)
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -19.76596793 -17.77574826 -16.92032457
+ -19.61442001          nan          nan -12.75857056 -16.16836486
+ -10.83587488 -17.80866307          nan          nan -16.4768092
+ -16.28583561 -13.67170765 -17.81346263          nan          nan
+ -10.58582851 -13.36884573 -11.45838243 -16.52258557          nan
+          nan -17.7438528  -17.6113836  -18.04158136 -18.34629235
+          nan          nan -17.1549283  -15.43655985 -13.0225882
+ -17.47037516          nan          nan -16.76871552 -20.80797562
+ -15.68791982 -16.36952821          nan          nan -12.83843565
+ -17.33274447 -11.56787594 -19.69469283]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -19.90366058 -17.017379   -17.48862649
+ -19.61263255          nan          nan -11.90272529 -16.10787312
+ -10.73525838 -17.55852603          nan          nan -15.94796261
+ -16.31588652 -13.53583214 -17.76491689          nan          nan
+ -10.43736011 -13.07230887 -11.42084612 -15.47915735          nan
+          nan -17.49260141 -16.98511796 -17.52113196 -18.30704452
+          nan          nan -16.37866255 -14.70653762 -13.01601381
+ -17.5484947           nan          nan -16.42922876 -20.82577366
+ -15.67049932 -16.07131774          nan          nan -12.13559574
+ -17.02335177 -11.3939871  -19.15871412]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -19.76596793 -17.77574826 -16.92032457
+ -19.61442001          nan          nan -12.75857056 -16.16836486
+ -10.83587488 -17.80866307          nan          nan -16.4768092
+ -16.28583561 -13.67170765 -17.81346263          nan          nan
+ -10.58582851 -13.36884573 -11.45838243 -16.52258557          nan
+          nan -17.7438528  -17.6113836  -18.04158136 -18.34629235
+          nan          nan -17.1549283  -15.43655985 -13.0225882
+ -17.47037516          nan          nan -16.76871552 -20.80797562
+ -15.68791982 -16.36952821          nan          nan -12.83843565
+ -17.33274447 -11.56787594 -19.69469283 -11.67435244 -16.42496938
+ -15.96698757 -16.66160197 -14.5101133  -16.92534735 -12.17437539
+ -15.93543334 -11.95257195 -12.52157212 -10.69517599 -12.28592947
+ -12.08906127 -12.05388854 -13.45526923 -10.70257558]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -19.90366058 -17.017379   -17.48862649
+ -19.61263255          nan          nan -11.90272529 -16.10787312
+ -10.73525838 -17.55852603          nan          nan -15.94796261
+ -16.31588652 -13.53583214 -17.76491689          nan          nan
+ -10.43736011 -13.07230887 -11.42084612 -15.47915735          nan
+          nan -17.49260141 -16.98511796 -17.52113196 -18.30704452
+          nan          nan -16.37866255 -14.70653762 -13.01601381
+ -17.5484947           nan          nan -16.42922876 -20.82577366
+ -15.67049932 -16.07131774          nan          nan -12.13559574
+ -17.02335177 -11.3939871  -19.15871412 -11.32264639 -16.5248668
+ -15.94313869 -17.04855904 -14.12119545 -16.55930782 -11.79383249
+ -15.71738807 -11.51089966 -12.4888085  -10.50432338 -11.93452446
+ -11.71217883 -11.83937872 -13.37652213 -10.35243481]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -19.76596793 -17.77574826 -16.92032457
+ -19.61442001          nan          nan -12.75857056 -16.16836486
+ -10.83587488 -17.80866307          nan          nan -16.4768092
+ -16.28583561 -13.67170765 -17.81346263          nan          nan
+ -10.58582851 -13.36884573 -11.45838243 -16.52258557          nan
+          nan -17.7438528  -17.6113836  -18.04158136 -18.34629235
+          nan          nan -17.1549283  -15.43655985 -13.0225882
+ -17.47037516          nan          nan -16.76871552 -20.80797562
+ -15.68791982 -16.36952821          nan          nan -12.83843565
+ -17.33274447 -11.56787594 -19.69469283 -11.67435244 -16.42496938
+ -15.96698757 -16.66160197 -14.5101133  -16.92534735 -12.17437539
+ -15.93543334 -11.95257195 -12.52157212 -10.69517599 -12.28592947
+ -12.08906127 -12.05388854 -13.45526923 -10.70257558 -10.15091515
+ -10.7591503  -12.23637649 -12.68258296 -11.51329374 -12.84479456]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -19.90366058 -17.017379   -17.48862649
+ -19.61263255          nan          nan -11.90272529 -16.10787312
+ -10.73525838 -17.55852603          nan          nan -15.94796261
+ -16.31588652 -13.53583214 -17.76491689          nan          nan
+ -10.43736011 -13.07230887 -11.42084612 -15.47915735          nan
+          nan -17.49260141 -16.98511796 -17.52113196 -18.30704452
+          nan          nan -16.37866255 -14.70653762 -13.01601381
+ -17.5484947           nan          nan -16.42922876 -20.82577366
+ -15.67049932 -16.07131774          nan          nan -12.13559574
+ -17.02335177 -11.3939871  -19.15871412 -11.32264639 -16.5248668
+ -15.94313869 -17.04855904 -14.12119545 -16.55930782 -11.79383249
+ -15.71738807 -11.51089966 -12.4888085  -10.50432338 -11.93452446
+ -11.71217883 -11.83937872 -13.37652213 -10.35243481  -9.96823076
+ -10.50043772 -12.2561345  -12.70303241 -11.30453138 -12.60215684]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the test scores are non-finite: [         nan          nan -19.76596793 -17.77574826 -16.92032457
+ -19.61442001          nan          nan -12.75857056 -16.16836486
+ -10.83587488 -17.80866307          nan          nan -16.4768092
+ -16.28583561 -13.67170765 -17.81346263          nan          nan
+ -10.58582851 -13.36884573 -11.45838243 -16.52258557          nan
+          nan -17.7438528  -17.6113836  -18.04158136 -18.34629235
+          nan          nan -17.1549283  -15.43655985 -13.0225882
+ -17.47037516          nan          nan -16.76871552 -20.80797562
+ -15.68791982 -16.36952821          nan          nan -12.83843565
+ -17.33274447 -11.56787594 -19.69469283 -11.67435244 -16.42496938
+ -15.96698757 -16.66160197 -14.5101133  -16.92534735 -12.17437539
+ -15.93543334 -11.95257195 -12.52157212 -10.69517599 -12.28592947
+ -12.08906127 -12.05388854 -13.45526923 -10.70257558 -10.15091515
+ -10.7591503  -12.23637649 -12.68258296 -11.51329374 -12.84479456
+ -10.62782845  -9.50915542]
+  warnings.warn(
+/home/bsc/bsc098069/.conda/envs/MLTrain/lib/python3.12/site-packages/sklearn/model_selection/_search.py:1135: UserWarning: One or more of the train scores are non-finite: [         nan          nan -19.90366058 -17.017379   -17.48862649
+ -19.61263255          nan          nan -11.90272529 -16.10787312
+ -10.73525838 -17.55852603          nan          nan -15.94796261
+ -16.31588652 -13.53583214 -17.76491689          nan          nan
+ -10.43736011 -13.07230887 -11.42084612 -15.47915735          nan
+          nan -17.49260141 -16.98511796 -17.52113196 -18.30704452
+          nan          nan -16.37866255 -14.70653762 -13.01601381
+ -17.5484947           nan          nan -16.42922876 -20.82577366
+ -15.67049932 -16.07131774          nan          nan -12.13559574
+ -17.02335177 -11.3939871  -19.15871412 -11.32264639 -16.5248668
+ -15.94313869 -17.04855904 -14.12119545 -16.55930782 -11.79383249
+ -15.71738807 -11.51089966 -12.4888085  -10.50432338 -11.93452446
+ -11.71217883 -11.83937872 -13.37652213 -10.35243481  -9.96823076
+ -10.50043772 -12.2561345  -12.70303241 -11.30453138 -12.60215684
+ -10.51087603  -9.45136909]
+  warnings.warn(
+Traceback (most recent call last):
+  File "/gpfs/home/bsc/bsc098069/llm_benchmarking/IPDPSPaper/benchmarks/lora/train_ml_explainability.py", line 437, in <module>
+    main(
+  File "/gpfs/home/bsc/bsc098069/llm_benchmarking/IPDPSPaper/benchmarks/lora/train_ml_explainability.py", line 409, in main
+    train_model(
+  File "/gpfs/home/bsc/bsc098069/llm_benchmarking/IPDPSPaper/benchmarks/lora/train_ml_explainability.py", line 365, in train_model
+    os.makedirs(os.path.join(output_path, 'trees'))
+  File "<frozen os>", line 225, in makedirs
+FileExistsError: [Errno 17] File exists: 'benchmarks/lora/definitive_results/finding_maximum/digital_twin_simplification/training/qwen-2.5-7b-instruct/explainability/reg/rf_simpler_2/trees'

@@ -1,0 +1,48 @@
+
+
+Training to predict total_throughput
+n_iterations: 1
+n_required_iterations: 1
+n_possible_iterations: 1
+min_resources_: 59160
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 2
+n_resources: 59160
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Training finished. Obtained results in test: R2 -> 0.9327933725159573; SMAPE -> 5.276755941822846; time -> 0.15265423174175186
+
+
+Training to predict itl
+n_iterations: 1
+n_required_iterations: 1
+n_possible_iterations: 1
+min_resources_: 59160
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 2
+n_resources: 59160
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Training finished. Obtained results in test: R2 -> 0.851879798626187; SMAPE -> 8.947167793676227; time -> 0.14748282321706052
+
+
+Training to predict ttft
+n_iterations: 1
+n_required_iterations: 1
+n_possible_iterations: 1
+min_resources_: 59160
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 2
+n_resources: 59160
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Training finished. Obtained results in test: R2 -> 0.7477050473862996; SMAPE -> 18.216203947834266; time -> 0.14110091397902225

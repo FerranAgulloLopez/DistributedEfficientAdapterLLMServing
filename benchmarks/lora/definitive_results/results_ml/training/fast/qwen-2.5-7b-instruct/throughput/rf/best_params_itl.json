@@ -1,0 +1,8 @@
+{
+    "criterion": "poisson",
+    "max_depth": 4,
+    "max_features": "log2",
+    "min_samples_leaf": 32,
+    "n_estimators": 1,
+    "n_jobs": -1
+}

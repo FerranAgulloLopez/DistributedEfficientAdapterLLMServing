@@ -1,0 +1,8 @@
+{
+    "C": 1000.0,
+    "coef0": 0.0,
+    "degree": 5,
+    "epsilon": 1,
+    "gamma": "scale",
+    "kernel": "sigmoid"
+}

@@ -1,0 +1,52 @@
+
+
+Training to predict total_throughput
+FAST. Training finished. Obtained results in test: R2 -> 0.6711412133190946; SMAPE -> 12.888783823704209; time -> 0.0019726342033231405
+FAST NUMBA. Training finished. Obtained results in test: R2 -> 0.6711412133190946; SMAPE -> 12.888783823704209; time -> 9.35854076510068e-05
+Training finished. Obtained results in test: R2 -> 0.6711412133190946; SMAPE -> 12.888783823704209; time -> 0.00252057929528968
+
+
+
+ Rules for total_throughput N# 16
+sum_rate <= 15.400 AND std_rate <= 0.031 AND sum_rate <= 4.538 AND mean_size <= 18.531 => 1024.542040426259
+sum_rate <= 15.400 AND std_rate <= 0.031 AND sum_rate <= 4.538 AND mean_size > 18.531 => 1201.096620695153
+sum_rate <= 15.400 AND std_rate <= 0.031 AND sum_rate > 4.538 AND std_size <= 9.979 => 3294.6367434884532
+sum_rate <= 15.400 AND std_rate <= 0.031 AND sum_rate > 4.538 AND std_size > 9.979 => 3103.2451715335883
+sum_rate <= 15.400 AND std_rate > 0.031 AND served_adapters <= 224.000 AND served_adapters <= 144.000 => 2651.7237335168857
+sum_rate <= 15.400 AND std_rate > 0.031 AND served_adapters <= 224.000 AND served_adapters > 144.000 => 3837.2799856213587
+sum_rate <= 15.400 AND std_rate > 0.031 AND served_adapters > 224.000 AND adapter_slots <= 12.000 => 5737.352158371448
+sum_rate <= 15.400 AND std_rate > 0.031 AND served_adapters > 224.000 AND adapter_slots > 12.000 => 6005.444647211804
+sum_rate > 15.400 AND adapter_slots <= 80.000 AND std_rate <= 0.498 AND std_rate <= 0.098 => 7756.577365158762
+sum_rate > 15.400 AND adapter_slots <= 80.000 AND std_rate <= 0.498 AND std_rate > 0.098 => 11932.26401370189
+sum_rate > 15.400 AND adapter_slots <= 80.000 AND std_rate > 0.498 AND std_size <= 11.282 => 13925.342062399237
+sum_rate > 15.400 AND adapter_slots <= 80.000 AND std_rate > 0.498 AND std_size > 11.282 => 13746.864193121432
+sum_rate > 15.400 AND adapter_slots > 80.000 AND adapter_slots <= 144.000 AND std_size <= 7.522 => 10035.76290430056
+sum_rate > 15.400 AND adapter_slots > 80.000 AND adapter_slots <= 144.000 AND std_size > 7.522 => 10002.441123614293
+sum_rate > 15.400 AND adapter_slots > 80.000 AND adapter_slots > 144.000 AND served_adapters <= 224.000 => 9059.254725143432
+sum_rate > 15.400 AND adapter_slots > 80.000 AND adapter_slots > 144.000 AND served_adapters > 224.000 => 7220.518427447378
+
+
+Training to predict itl
+FAST. Training finished. Obtained results in test: R2 -> 0.14485760852984297; SMAPE -> 23.96825789872762; time -> 0.0018988598085565083
+FAST NUMBA. Training finished. Obtained results in test: R2 -> 0.14485760852984297; SMAPE -> 23.96825789872762; time -> 3.967073919228846e-05
+Training finished. Obtained results in test: R2 -> 0.14485760852984297; SMAPE -> 23.96825789872762; time -> 0.0032629085159519822
+
+
+
+ Rules for itl N# 16
+std_rate <= 0.100 AND adapter_slots <= 112.000 AND served_adapters <= 224.000 AND adapter_slots <= 24.000 => 19.997118552642718
+std_rate <= 0.100 AND adapter_slots <= 112.000 AND served_adapters <= 224.000 AND adapter_slots > 24.000 => 23.532283197400044
+std_rate <= 0.100 AND adapter_slots <= 112.000 AND served_adapters > 224.000 AND std_rate <= 0.026 => 26.19951362357235
+std_rate <= 0.100 AND adapter_slots <= 112.000 AND served_adapters > 224.000 AND std_rate > 0.026 => 47.610692991133895
+std_rate <= 0.100 AND adapter_slots > 112.000 AND served_adapters <= 288.000 AND std_rate <= 0.031 => 23.157638930200214
+std_rate <= 0.100 AND adapter_slots > 112.000 AND served_adapters <= 288.000 AND std_rate > 0.031 => 53.737542330042075
+std_rate <= 0.100 AND adapter_slots > 112.000 AND served_adapters > 288.000 AND std_rate <= 0.026 => 40.64069243369444
+std_rate <= 0.100 AND adapter_slots > 112.000 AND served_adapters > 288.000 AND std_rate > 0.026 => 165.94117578054252
+std_rate > 0.100 AND std_size <= 3.791 AND sum_rate <= 22.525 AND sum_rate <= 16.050 => 24.763115839542827
+std_rate > 0.100 AND std_size <= 3.791 AND sum_rate <= 22.525 AND sum_rate > 16.050 => 52.0249271206988
+std_rate > 0.100 AND std_size <= 3.791 AND sum_rate > 22.525 AND sum_rate <= 38.873 => 115.12955020961702
+std_rate > 0.100 AND std_size <= 3.791 AND sum_rate > 22.525 AND sum_rate > 38.873 => 152.4065405638382
+std_rate > 0.100 AND std_size > 3.791 AND std_size <= 7.464 AND std_rate <= 0.494 => 27.18320615584079
+std_rate > 0.100 AND std_size > 3.791 AND std_size <= 7.464 AND std_rate > 0.494 => 69.30856613730165
+std_rate > 0.100 AND std_size > 3.791 AND std_size > 7.464 AND sum_rate <= 21.541 => 32.85153187116198
+std_rate > 0.100 AND std_size > 3.791 AND std_size > 7.464 AND sum_rate > 21.541 => 126.10640650579134

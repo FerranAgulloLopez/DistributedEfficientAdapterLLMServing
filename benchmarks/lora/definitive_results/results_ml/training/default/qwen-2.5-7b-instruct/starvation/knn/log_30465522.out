@@ -1,0 +1,16 @@
+
+
+Training to predict starvation
+n_iterations: 1
+n_required_iterations: 1
+n_possible_iterations: 1
+min_resources_: 59160
+max_resources_: 59160
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 2
+n_resources: 59160
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Training finished. Obtained results in test: Accuracy -> 0.9939024390243902; F1-macro -> 0.9938362085165557; time -> 0.188517276333963

@@ -1,0 +1,2 @@
+target,model,accuracy,f1_macro,time
+starvation,knn,0.95,0.95,0.19

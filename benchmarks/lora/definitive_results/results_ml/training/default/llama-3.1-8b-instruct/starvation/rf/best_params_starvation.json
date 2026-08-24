@@ -1,0 +1,9 @@
+{
+    "criterion": "log_loss",
+    "max_depth": 20,
+    "max_features": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 5,
+    "n_estimators": 128,
+    "n_jobs": -1
+}

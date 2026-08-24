@@ -1,0 +1,54 @@
+
+
+Training to predict starvation
+n_iterations: 8
+n_required_iterations: 8
+n_possible_iterations: 8
+min_resources_: 20
+max_resources_: 44761
+aggressive_elimination: False
+factor: 3
+----------
+iter: 0
+n_candidates: 2592
+n_resources: 20
+Fitting 5 folds for each of 2592 candidates, totalling 12960 fits
+----------
+iter: 1
+n_candidates: 864
+n_resources: 60
+Fitting 5 folds for each of 864 candidates, totalling 4320 fits
+----------
+iter: 2
+n_candidates: 288
+n_resources: 180
+Fitting 5 folds for each of 288 candidates, totalling 1440 fits
+----------
+iter: 3
+n_candidates: 96
+n_resources: 540
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+----------
+iter: 4
+n_candidates: 32
+n_resources: 1620
+Fitting 5 folds for each of 32 candidates, totalling 160 fits
+----------
+iter: 5
+n_candidates: 11
+n_resources: 4860
+Fitting 5 folds for each of 11 candidates, totalling 55 fits
+----------
+iter: 6
+n_candidates: 4
+n_resources: 14580
+Fitting 5 folds for each of 4 candidates, totalling 20 fits
+----------
+iter: 7
+n_candidates: 2
+n_resources: 43740
+Fitting 5 folds for each of 2 candidates, totalling 10 fits
+Hypeparameter search time: 196.59402343817055
+Training finished. Obtained results in test: Accuracy -> 0.9548872180451128; F1-macro -> 0.9547619047619047; time -> 0.16294394731801704
+
+ Rules for starvation N# 44462
