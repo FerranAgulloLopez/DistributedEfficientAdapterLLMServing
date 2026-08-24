@@ -126,7 +126,7 @@ Specifically, we have the following:
   - multi_gpu: Figure 11 and Table 6
   - lat_oriented: Figure 12
 
-Some of the results are compressed and uploaded with GIT LFS, uncompressed them before running the python scripts that create the tables and/or figures
+Some of the results are compressed with ZIP and uploaded with GIT LFS, they need to be uncompressed before running the python scripts that create the tables and/or figures
 
 ### How to cite
 If using these code modifications please cite this paper:
