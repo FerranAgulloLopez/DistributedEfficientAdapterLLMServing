@@ -70,7 +70,7 @@ sudo swapon /swapfile
 ```
 
 ### How to run
-Once the Singularity image has been built, you can easily reproduce the experiments from the paper using the commands provided in the .txt configuration files. For every run set of experiments we include a config*.txt file with the command that was used ot run it (it is created automatically). These commands invoke the launcher that does all effort in running the desired experiments in the Slurm cluster transparent to the user.
+Once the Singularity image has been built, you can easily reproduce the experiments from the paper using the commands provided in the .txt configuration files available under _benchmarks/lora/definitive_results/_. For every run set of experiments we include a config*.txt file with the command that was used ot run it (it is created automatically). These commands invoke the launcher that does all effort in running the desired experiments in the Slurm cluster transparent to the user.
 
 For instance, the directory _benchmarks/lora/definitive_results/performance_analysis/memory_overhead/llama-2-7b/mean_dataset/_ contains the file _config-50824.txt_ with the ready-to-run command that was used to run some of the performance analysis experiments of Section 5.1.1. Simply execute it from the root directory of the repository, and the corresponding experiments will be submitted to the Slurm queue for execution.
 
